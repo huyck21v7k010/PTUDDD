@@ -17,6 +17,13 @@ class ProductGridTile extends StatelessWidget {
       child: GridTile(
         footer: buildGridFooterBar(context),
         child: GestureDetector(
+            onTap: () {
+                Navigator.of(context).pushNamed(
+                  ProductetaDetaiScreen.routeName,
+                  arguments: product.id,
+                );
+              },
+        child: GestureDetector(
           onTap: () {
               Navigator.of(context).push(
                   MaterialPageRoute(
@@ -30,6 +37,7 @@ class ProductGridTile extends StatelessWidget {
           ),
         ),
       ),
+      )
     );
   }
 
