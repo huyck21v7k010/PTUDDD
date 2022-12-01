@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myshop1/ui/cart/cart_screen.dart';
 import 'ui/product/products_manager.dart';
 import 'ui/product/product_detail_screen.dart';
 import 'ui/product/product_overview_screen.dart';
@@ -26,11 +27,17 @@ class MyApp extends StatelessWidget {
         ),
       ),
     
-      home: SafeArea(
+      /*home: SafeArea(
         child: UserProductsScreen(),
       ),
     );
   }
+}*/
+home: const SafeArea( 
+  child: CartScreen(),
+),
+);
+}
 }
 
 class MyHomePage extends StatefulWidget {
@@ -117,3 +124,4 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
