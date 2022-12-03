@@ -10,6 +10,7 @@ import 'ui/product/product_overview_screen.dart';
 import 'ui/product/user_product_screen.dart';
 // ignore: depend_on_referenced_packages
 import 'package:provider/provider.dart';
+import 'package:myshop1/ui/product/edit_product_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -80,6 +81,18 @@ class MyApp extends StatelessWidget {
             },
           );
         }
+        if (settings.name == EditProductScreen.routeName) {
+            final productId = settings.arguments as String?;
+            return MaterialPageRoute(
+              builder: (ctx) {
+                return EditProductScreen(
+                  productId != null
+                      ? ctx.read<ProductsManager>().findById(productId)
+                      : null,
+                );
+              },
+            );
+          }
         return null;
       },
     ),
