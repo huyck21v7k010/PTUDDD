@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:myshop1/ui/cart/cart_screen.dart';
 import 'package:myshop1/ui/orders/orders_screen.dart';
-import 'ui/product/products_manager.dart';
+import 'package:myshop1/ui/product/user_product_screen.dart';
+import 'ui/product/product_manager.dart';
 import 'ui/product/product_detail_screen.dart';
 import 'ui/product/product_overview_screen.dart';
-import 'ui/product/user_products_screen.dart';
+import 'ui/product/user_product_screen.dart';
+// ignore: depend_on_referenced_packages
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,8 +18,14 @@ class MyApp extends StatelessWidget {
 
   // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
+   Widget build(BuildContext context) {
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (ctx) => ProductsManager(),
+        ),
+      ],
+      child: MaterialApp(
       title: 'My Shop',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -65,6 +74,7 @@ class MyApp extends StatelessWidget {
         }
         return null;
       },
+    ),
     );
   }
 }

@@ -6,7 +6,7 @@ class Product {
   final String description;
   final double price;
   final String imageUrl;
-  ValueNotifier<bool> _isFavorite;
+  final ValueNotifier<bool> _isFavorite;
 
   Product({
     this.id,
@@ -16,7 +16,7 @@ class Product {
     required this.imageUrl,
     isFavorite = false,
   }) : _isFavorite = ValueNotifier(isFavorite);
-
+  
   set isFavorite(bool newValue) {
     _isFavorite.value = newValue;
   }
@@ -28,23 +28,6 @@ class Product {
   ValueNotifier<bool> get isFavoriteListenable {
     return _isFavorite;
   }
-}
-/*class Product {
-  final String? id;
-  final String title;
-  final String description;
-  final double price;
-  final String imageUrl;
-  final bool isFavorite;
-
-  Product({
-    this.id,
-    required this.title,
-    required this.description,
-    required this.price,
-    required this.imageUrl,
-    this.isFavorite = false,
-  });
 
   Product copyWith({
     String? id,
@@ -63,4 +46,4 @@ class Product {
       isFavorite: isFavorite ?? this.isFavorite,
     );
   }
-}*/
+}

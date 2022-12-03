@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myshop1/ui/cart/cart_screen.dart';
 import '../shared/app_drawer.dart';
-import 'products_grid.dart';
+import 'product_grid.dart';
 import '../cart/cart_manager.dart';
 import 'top_right_badge.dart';
 
