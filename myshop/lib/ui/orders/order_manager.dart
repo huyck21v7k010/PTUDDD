@@ -8,7 +8,7 @@ class OrdersManager with ChangeNotifier {
   final List<OrderItem> _orders = [
     OrderItem(
       id: '01',
-      amount: 59.98,
+      amount: 29.99,
       products: [
         CartItem(
           id: 'c1',
